@@ -8,33 +8,33 @@
             </a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">
-                <span data-feather="file"></span>
-                Orders
-            </a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">
-                <span data-feather="shopping-cart"></span>
-                Products
-            </a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('mesero.index')}}">
                 <span data-feather="users"></span>
-                Customers
+                Meseros
             </a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="#">
-                <span data-feather="bar-chart-2"></span>
-                Reports
+                <span data-feather="clock"></span>
+                Checador
             </a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="#">
-                <span data-feather="layers"></span>
-                Integrations
+                <span data-feather="monitor"></span>
+                Mesas
+            </a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">
+                <span data-feather="clipboard"></span>
+                Asignar Mesa
+            </a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">
+                <span data-feather="check-square"></span>
+                Reportes
             </a>
             </li>
         </ul>

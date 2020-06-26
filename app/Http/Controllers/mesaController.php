@@ -2,83 +2,59 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MesaRequests;
+use App\mesa;
 use Illuminate\Http\Request;
 
 class mesaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $mesas = mesa::get();
+        return view('mesa.index', [
+            'mesas' => $mesas
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('mesa.create', [
+            'mesa' => new mesa
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(MesaRequests $request)
     {
-        //
+        mesa::create( $request->validated() );
+
+        return redirect()->route('mesa.index')
+            ->with('success', "Mesa creada correctamente.");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit(mesa $mesa)
     {
-        //
+        return view('mesa.edit', [
+            'mesa' => $mesa
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(mesa $mesa, MesaRequests $request)
     {
-        //
+        $mesa->update( $request->validated() );
+
+        return redirect()->route('mesa.index')
+            ->with('primary', "Mesa editado correctamente.");
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(mesa $mesa)
     {
-        //
+        $mesa->delete();
+        return redirect()->route('mesa.index')
+            ->with('danger', "Mesa eliminado correctamente.");
     }
 }

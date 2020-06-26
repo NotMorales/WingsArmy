@@ -20,7 +20,7 @@
             </a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('mesa.index')}}">
                 <span data-feather="monitor"></span>
                 Mesas
             </a>

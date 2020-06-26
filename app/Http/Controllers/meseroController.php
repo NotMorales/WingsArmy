@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\MeseroRequests;
 use App\mesero;
-use Illuminate\Http\Request;
 
 class meseroController extends Controller
 {

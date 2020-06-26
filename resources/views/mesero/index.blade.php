@@ -29,10 +29,10 @@
                         <td>{{ $mesero->correo }}</td>
                         <td>{{ $mesero->direccion }}</td>
                         <td>
-                            <a href="{{ route('mesero.edit', $mesero) }}">Editar</a>
+                            <a href="{{ route('mesero.edit', $mesero) }}"><i data-feather="edit-2"></i></a>
                             <form method="POST" action="{{ route('mesero.destroy', $mesero) }}">
                                 @csrf @method('DELETE')
-                                <button>Eliminar</button>
+                                <button><i data-feather="trash-2"></i></button>
                             </form>
                         </td>
                     </tr>

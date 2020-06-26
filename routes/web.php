@@ -7,3 +7,5 @@ Route::get('/', function () {
 });
 
 Route::resource('mesero', 'meseroController');
+
+Route::resource('mesa', 'mesaController');

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MeseroRequests extends FormRequest
+class MesaRequests extends FormRequest
 {
     public function authorize()
     {
@@ -15,9 +15,7 @@ class MeseroRequests extends FormRequest
     {
         return [
             'nombre' => 'required',
-            'telefono' => 'required|numeric',
-            'correo' => 'required|email',
-            'direccion' => 'required'
+            'descripcion' => ''
         ];
     }
 

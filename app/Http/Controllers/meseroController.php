@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\cola;
 use App\Http\Requests\MeseroRequests;
 use App\mesero;
+use Throwable;
 
 class meseroController extends Controller
 {
@@ -53,9 +54,15 @@ class meseroController extends Controller
 
     public function destroy(mesero $mesero)
     {
-        $mesero->delete();
-        return redirect()->route('mesero.index')
-            ->with('danger', "Mesero eliminado correctamente.");
+        try {
+            $mesero->delete();
+            return redirect()->route('mesero.index')
+                ->with('danger', "Mesero eliminado correctamente.");
+        } catch (Throwable $e) {
+            return redirect()->route('mesero.index')
+            ->with('danger', "No fue posible completar esta operacion, ya que este registro forma parte de otros mas.");
+        }
+
     }
     public function delete(mesero $mesero)
     {
@@ -70,7 +77,8 @@ class meseroController extends Controller
 
         mesero::where('meseroId', $mesero->meseroId)
                 ->update(['deleted_at' => $deleted ]
-                        );
+        );
+        colaController::destroy($mesero->meseroId);
         return redirect()->route('mesero.index')
             ->with( $session, $message );
     }

@@ -18,3 +18,6 @@ Route::get('checador/mostrar/todos', 'checadorController@all')->name('checador.a
 Route::resource('asignacion', 'asignacionController');
 Route::get('asignacion/{mesa}/asignar', 'asignacionController@asignar')->name('asignacion.asignar');
 Route::get('asignacion/{mesa}/terminar', 'asignacionController@terminar')->name('asignacion.terminar');
+
+Route::resource('reporte', 'reporteController');
+Route::post('reporte/fecha', 'reporteController@fecha')->name('reporte.fecha');

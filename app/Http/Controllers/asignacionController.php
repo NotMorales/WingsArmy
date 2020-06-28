@@ -7,6 +7,7 @@ use App\cola;
 use App\mesa;
 use App\mesero;
 use Illuminate\Http\Request;
+use Throwable;
 
 class asignacionController extends Controller
 {
@@ -66,19 +67,24 @@ class asignacionController extends Controller
     }
     public function asignar($mesa)
     {
-        $mesaTem = mesa::where('mesaId', $mesa)->first();
-        $meseroTem = cola::orderBy('created_at', 'ASC')->first();
-        asignacion::create([
-            'mesaId' => $mesaTem->mesaId,
-            'meseroId' => $meseroTem->meseroId,
-            'fecha' => date('Y-m-d'),
-        ]);
-        mesaController::cambiarEstado($mesaTem);
-        colaController::moverCola($meseroTem);
+        try {
+            $mesaTem = mesa::where('mesaId', $mesa)->first();
+            $meseroTem = cola::orderBy('created_at', 'ASC')->first();
+            asignacion::create([
+                'mesaId' => $mesaTem->mesaId,
+                'meseroId' => $meseroTem->meseroId,
+                'fecha' => date('Y-m-d'),
+            ]);
+            mesaController::cambiarEstado($mesaTem);
+            colaController::moverCola($meseroTem);
 
-        $nombre = $meseroTem->mesero->nombre;
-        return redirect()->route('asignacion.index')
-            ->with('success', "Mesa: $mesaTem->nombre asignada correctamente con el mesero: $nombre" );
+            $nombre = $meseroTem->mesero->nombre;
+            return redirect()->route('asignacion.index')
+                ->with('success', "Mesa: $mesaTem->nombre asignada correctamente con el mesero: $nombre" );
+        } catch (Throwable $e) {
+            return redirect()->route('asignacion.index')
+                ->with('danger', "No hay meseros disponibles!");
+        }
     }
 
     public function terminar($mesa)

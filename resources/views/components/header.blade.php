@@ -6,9 +6,9 @@
         <a href="{{ $btn2 ?? '' }}" class="btn btn-sm btn-outline-secondary">{{ $text2 ?? '' }}</a>
 
     </div>
-    <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+    <button class="btn btn-sm btn-outline-secondary">
         <span data-feather="calendar"></span>
-        This week
+        {{date('d-m-Y')}}
     </button>
     </div>
 </div>

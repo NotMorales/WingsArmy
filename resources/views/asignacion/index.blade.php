@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <x-header titulo="Asignacion de mesas" agregar="{{ Route('asignacion.create') }}"></x-header>
+    <x-header titulo="Asignacion de mesas" agregar=""></x-header>
 
     <h2>Mesas</h2>
     @include('includes.sessions')

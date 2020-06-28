@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\MesaRequests;
 use App\mesa;
 use Illuminate\Http\Request;
+use Throwable;
 
 class mesaController extends Controller
 {
@@ -53,9 +54,14 @@ class mesaController extends Controller
 
     public function destroy(mesa $mesa)
     {
-        $mesa->delete();
-        return redirect()->route('mesa.index')
-            ->with('danger', "Mesa eliminado correctamente.");
+        try {
+            $mesa->delete();
+            return redirect()->route('mesa.index')
+                ->with('danger', "Mesa eliminado correctamente.");
+        } catch (Throwable $e) {
+            return redirect()->route('mesa.index')
+            ->with('danger', "No fue posible completar esta operacion, ya que este registro forma parte de otros mas.");
+        }
     }
     public static function cambiarEstado(mesa $mesa)
     {

@@ -9,7 +9,7 @@
     @include('includes.sessions')
 
     <div class="table-responsive">
-        <table class="table table-striped table-sm">
+        <table id="DataTable" class="table table-striped table-sm">
             <thead>
                 <tr>
                     <th>Nombre</th>

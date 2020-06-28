@@ -8,23 +8,21 @@
     @include('includes.sessions')
 
     <div class="table-responsive">
-        <table class="table table-striped table-sm">
+        <table id="DataTable" class="table table-striped table-sm myTable" >
             <thead>
                 <tr>
-                <th>#</th>
-                <th>Nombre</th>
-                <th>Telefono</th>
-                <th>Correo</th>
-                <th>Direccion</th>
-                <th>Estado</th>
-                <th>Acciones</th>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th>Direccion</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
 
                 @foreach ($meseros as $mesero)
                     <tr>
-                        <td> 1 </td>
                         <td>{{ $mesero->nombre }}</td>
                         <td>{{ $mesero->telefono }}</td>
                         <td>{{ $mesero->correo }}</td>

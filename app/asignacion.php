@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class asignacion extends Model
 {
+    protected $fillable = ['asignacionId', 'meseroId', 'mesaId', 'fecha', 'total', 'final', 'created_at', 'updated_at'];
     protected $table = 'asignacion';
     protected $primaryKey = 'asignacionId';
 

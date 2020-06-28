@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\cola;
 use App\Http\Requests\MeseroRequests;
 use App\mesero;
 

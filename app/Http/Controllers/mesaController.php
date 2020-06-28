@@ -57,4 +57,14 @@ class mesaController extends Controller
         return redirect()->route('mesa.index')
             ->with('danger', "Mesa eliminado correctamente.");
     }
+    public static function cambiarEstado(mesa $mesa)
+    {
+        $estado = 0;
+        if($mesa->estado == 0){
+            $estado = 1;
+        }
+        mesa::where('mesaId', $mesa->mesaId)
+            ->update(['estado' => $estado
+        ]);
+    }
 }

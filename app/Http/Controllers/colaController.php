@@ -46,4 +46,9 @@ class colaController extends Controller
     {
         cola::where('meseroId', $meseroId)->delete();
     }
+    public static function moverCola($mesero)
+    {
+        cola::where('meseroId', $mesero->meseroId)->delete();
+        colaController::store( $mesero->meseroId );
+    }
 }

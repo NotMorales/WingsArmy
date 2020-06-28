@@ -26,7 +26,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link {{ setActive('asignacion.index') }}" href="{{route('asignacion.index')}}">
                     <span data-feather="clipboard"></span>
                     Asignar Mesa
                 </a>

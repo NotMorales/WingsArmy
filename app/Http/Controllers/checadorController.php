@@ -2,83 +2,93 @@
 
 namespace App\Http\Controllers;
 
+use App\checador;
+use App\mesa;
+use App\mesero;
 use Illuminate\Http\Request;
 
 class checadorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $checadors = checador::where('fecha', date('Y-m-d') )->get();
+        return view('checador.index', [
+            'checadors' => $checadors
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('checador.create', [
+            'meseros' => mesero::where('deleted_at', 0)->get()
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'meseroId' => 'required'
+        ]);
+
+        $meseroTem = checador::where('meseroId', Request('meseroId'))->where('fecha', date('Y-m-d'))->first();
+
+        if( $meseroTem == null){
+            checador::create([
+                'meseroId' => Request('meseroId'),
+                'fecha' => date('Y-m-d'),
+                'entrada' => date('H:i:s')
+            ]);
+            colaController::store( Request('meseroId') );
+            return redirect()->route('checador.index')
+                ->with('success', "Check creado correctamente.");
+        }
+
+        return redirect()->route('checador.index')
+            ->with('danger', "Este mesero ya realizo check hoy.");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
+    }
+
+    public function exit($checador)
+    {
+        $checadorTem = checador::where('checadorId', $checador)->first();
+
+        if( $checadorTem->salida == null ){
+            checador::where('checadorId', $checador)
+                ->update(['salida' => date('H:i:s') ]
+            );
+            colaController::destroy( $checadorTem->meseroId );
+            return redirect()->route('checador.index')
+                ->with('success', "Salida registrada correctamente.");
+        }else{
+            colaController::destroy( $checadorTem->meseroId );
+            return redirect()->route('checador.index')
+                ->with('danger', "Este mesero ya realizo salida hoy.");
+        }
+    }
+    public function all()
+    {
+        $checadors = checador::get();
+        return view('checador.all', [
+            'checadors' => $checadors
+        ]);
     }
 }

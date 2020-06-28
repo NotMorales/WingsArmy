@@ -3,7 +3,8 @@
     <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
         <a href="{{ $agregar }}" class="btn btn-sm btn-outline-secondary">Añadir Nuevo</a>
-        <a href="" class="btn btn-sm btn-outline-secondary">Exportar</a>
+        <a href="{{ $btn2 ?? '' }}" class="btn btn-sm btn-outline-secondary">{{ $text2 ?? '' }}</a>
+
     </div>
     <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
         <span data-feather="calendar"></span>

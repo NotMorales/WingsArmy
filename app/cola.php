@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class cola extends Model
 {
+    protected $fillable = ['colaId', 'meseroId', 'posicion', 'contador', 'created_at', 'updated_at'];
     protected $table = 'cola';
     protected $primaryKey = 'colaId';
 

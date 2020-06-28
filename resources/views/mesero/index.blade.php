@@ -16,6 +16,7 @@
                 <th>Telefono</th>
                 <th>Correo</th>
                 <th>Direccion</th>
+                <th>Estado</th>
                 <th>Acciones</th>
                 </tr>
             </thead>
@@ -29,11 +30,15 @@
                         <td>{{ $mesero->correo }}</td>
                         <td>{{ $mesero->direccion }}</td>
                         <td>
+                            @if ( $mesero->deleted_at == 0 )
+                                Activo
+                            @else
+                                Retirado
+                            @endif
+                        </td>
+                        <td>
                             <a href="{{ route('mesero.edit', $mesero) }}"><i data-feather="edit-2"></i></a>
-                            <form method="POST" action="{{ route('mesero.destroy', $mesero) }}">
-                                @csrf @method('DELETE')
-                                <button><i data-feather="trash-2"></i></button>
-                            </form>
+                            <a href="{{ route('mesero.delete', $mesero) }}"><i data-feather="trash-2"></i></a>
                         </td>
                     </tr>
                 @endforeach

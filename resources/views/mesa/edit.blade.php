@@ -11,4 +11,12 @@
         @include('forms._mesa', ['btnText' => 'Editar'])
 
     </form>
+    <br>
+    <form method="POST" action="{{ route('mesa.destroy', $mesa) }}">
+        @csrf @method('DELETE')
+        <button type="submit" class="btn btn-danger btn-block">
+            <span data-feather="calendar"></span>
+            Eliminar permanentemente!
+        </button>
+    </form>
 @endsection

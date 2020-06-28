@@ -11,4 +11,12 @@
         @include('forms._mesero', ['btnText' => 'Editar'])
 
     </form>
+    <br>
+    <form method="POST" action="{{ route('mesero.destroy', $mesero) }}">
+        @csrf @method('DELETE')
+        <button type="submit" class="btn btn-danger btn-block">
+            <span data-feather="calendar"></span>
+            Eliminar permanentemente!
+        </button>
+    </form>
 @endsection

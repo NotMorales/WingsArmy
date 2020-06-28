@@ -26,10 +26,6 @@
                         <td>{{ $mesa->descripcion }}</td>
                         <td>
                             <a href="{{ route('mesa.edit', $mesa) }}"><i data-feather="edit-2"></i></a>
-                            <form method="POST" action="{{ route('mesa.destroy', $mesa) }}">
-                                @csrf @method('DELETE')
-                                <button><i data-feather="trash-2"></i></button>
-                            </form>
                         </td>
                     </tr>
                 @endforeach

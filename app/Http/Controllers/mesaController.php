@@ -31,7 +31,7 @@ class mesaController extends Controller
             ->with('success', "Mesa creada correctamente.");
     }
 
-    public function show($id)
+    public function show(mesa $mesa)
     {
         //
     }

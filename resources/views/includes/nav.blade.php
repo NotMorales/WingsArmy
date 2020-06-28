@@ -2,40 +2,40 @@
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
             <li class="nav-item">
-            <a class="nav-link active" href="#">
-                <span data-feather="home"></span>
-                Dashboard <span class="sr-only">(current)</span>
-            </a>
+                <a class="nav-link {{ setActive('home') }}" href="#">
+                    <span data-feather="home"></span>
+                    Dashboard <span class="sr-only">(current)</span>
+                </a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="{{route('mesero.index')}}">
-                <span data-feather="users"></span>
-                Meseros
-            </a>
+                <a class="nav-link {{ setActive('mesero.index') }}" href="{{route('mesero.index')}}">
+                    <span data-feather="users"></span>
+                    Meseros
+                </a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">
-                <span data-feather="clock"></span>
-                Checador
-            </a>
+                <a class="nav-link {{ setActive('checador.index') }}" href="{{route('checador.index')}}">
+                    <span data-feather="clock"></span>
+                    Checador
+                </a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="{{route('mesa.index')}}">
-                <span data-feather="monitor"></span>
-                Mesas
-            </a>
+                <a class="nav-link {{ setActive('mesa.index') }}" href="{{route('mesa.index')}}">
+                    <span data-feather="monitor"></span>
+                    Mesas
+                </a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">
-                <span data-feather="clipboard"></span>
-                Asignar Mesa
-            </a>
+                <a class="nav-link" href="#">
+                    <span data-feather="clipboard"></span>
+                    Asignar Mesa
+                </a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">
-                <span data-feather="check-square"></span>
-                Reportes
-            </a>
+                <a class="nav-link" href="#">
+                    <span data-feather="check-square"></span>
+                    Reportes
+                </a>
             </li>
         </ul>
 

@@ -2,146 +2,63 @@
 
 @section('content')
 
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-        <div class="btn-group mr-2">
-            <button class="btn btn-sm btn-outline-secondary">Share</button>
-            <button class="btn btn-sm btn-outline-secondary">Export</button>
-        </div>
-        <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="calendar"></span>
-            This week
-        </button>
-        </div>
-    </div>
+<main role="main">
 
-    <h2>Section title</h2>
-    <div class="table-responsive">
-        <table class="table table-striped table-sm">
-        <thead>
-            <tr>
-            <th>#</th>
-            <th>Header</th>
-            <th>Header</th>
-            <th>Header</th>
-            <th>Header</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <td>1,001</td>
-            <td>Lorem</td>
-            <td>ipsum</td>
-            <td>dolor</td>
-            <td>sit</td>
-            </tr>
-            <tr>
-            <td>1,002</td>
-            <td>amet</td>
-            <td>consectetur</td>
-            <td>adipiscing</td>
-            <td>elit</td>
-            </tr>
-            <tr>
-            <td>1,003</td>
-            <td>Integer</td>
-            <td>nec</td>
-            <td>odio</td>
-            <td>Praesent</td>
-            </tr>
-            <tr>
-            <td>1,003</td>
-            <td>libero</td>
-            <td>Sed</td>
-            <td>cursus</td>
-            <td>ante</td>
-            </tr>
-            <tr>
-            <td>1,004</td>
-            <td>dapibus</td>
-            <td>diam</td>
-            <td>Sed</td>
-            <td>nisi</td>
-            </tr>
-            <tr>
-            <td>1,005</td>
-            <td>Nulla</td>
-            <td>quis</td>
-            <td>sem</td>
-            <td>at</td>
-            </tr>
-            <tr>
-            <td>1,006</td>
-            <td>nibh</td>
-            <td>elementum</td>
-            <td>imperdiet</td>
-            <td>Duis</td>
-            </tr>
-            <tr>
-            <td>1,007</td>
-            <td>sagittis</td>
-            <td>ipsum</td>
-            <td>Praesent</td>
-            <td>mauris</td>
-            </tr>
-            <tr>
-            <td>1,008</td>
-            <td>Fusce</td>
-            <td>nec</td>
-            <td>tellus</td>
-            <td>sed</td>
-            </tr>
-            <tr>
-            <td>1,009</td>
-            <td>augue</td>
-            <td>semper</td>
-            <td>porta</td>
-            <td>Mauris</td>
-            </tr>
-            <tr>
-            <td>1,010</td>
-            <td>massa</td>
-            <td>Vestibulum</td>
-            <td>lacinia</td>
-            <td>arcu</td>
-            </tr>
-            <tr>
-            <td>1,011</td>
-            <td>eget</td>
-            <td>nulla</td>
-            <td>Class</td>
-            <td>aptent</td>
-            </tr>
-            <tr>
-            <td>1,012</td>
-            <td>taciti</td>
-            <td>sociosqu</td>
-            <td>ad</td>
-            <td>litora</td>
-            </tr>
-            <tr>
-            <td>1,013</td>
-            <td>torquent</td>
-            <td>per</td>
-            <td>conubia</td>
-            <td>nostra</td>
-            </tr>
-            <tr>
-            <td>1,014</td>
-            <td>per</td>
-            <td>inceptos</td>
-            <td>himenaeos</td>
-            <td>Curabitur</td>
-            </tr>
-            <tr>
-            <td>1,015</td>
-            <td>sodales</td>
-            <td>ligula</td>
-            <td>in</td>
-            <td>libero</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Control de meseros y mesas</h1>
+        <p class="lead text-muted">Este software tiene el propósito funcional, y sólo se usará dentro de
+            las instalaciones del restaurante “Wing’s Army”, de servir como un sistema gestor del personal
+            de dicho restaurante, esto para aumentar la sinergia del equipo de trabajo de la franquicia y
+            evitar problemas con la toma de pedidos y por ende agilizar la respuesta de los pedidos hacia
+            los clientes, obteniendo así, mejores resultados en la satisfacción del cliente.</p>
+        <p>
+          <a href="https://github.com/NotMorales/WingsArmy" class="btn btn-primary my-2" target="_blank">Control de versiones</a>
+          <a href="https://docs.google.com/document/d/1OmhcxvAzrM22snmqN3l4NUyttVXV7CAu/edit" class="btn btn-primary my-2" target="_blank">Documento de despliegue</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="row">
+        <div class="col-lg-4" style="text-align: center">
+            <img class="rounded-circle" src="{{asset('aguirre.jpg')}}" alt="Generic placeholder image" width="140" height="140">
+            <h2>Aguirre Fuentes Luis</h2>
+            <p>
+                <strong>Correo: </strong>luizeduardo.fuentesaguirre@gmail.com<br>
+                <strong>Matricula: </strong>zS17016273<br>
+                <strong>Telefono: </strong>921-145-3967
+            </p>
+            <p><a target="_blank" class="btn btn-primary" href="https://www.facebook.com/profile.php?id=100019031589271" role="button"><i data-feather="facebook"></i>Seguir</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4" style="text-align: center">
+          <img class="rounded-circle" src="{{asset('morales2.jpg')}}" alt="Generic placeholder image" width="140" height="140">
+          <h2>Morales Velazquez Luis</h2>
+          <p>
+            <strong>Correo: </strong>morales.lamv@gmail.com<br>
+            <strong>Matricula: </strong>zS17016232<br>
+            <strong>Telefono: </strong>921-147-9791
+        </p>
+          <p><a target="_blank" class="btn btn-primary" href="https://www.facebook.com/luis.morales.velazquez/" role="button"><i data-feather="facebook"></i>Seguir</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4" style="text-align: center">
+          <img class="rounded-circle" src="{{asset('valerio.jpg')}}" alt="Generic placeholder image" width="140" height="140">
+          <h2>Valerio Vargas Carlos</h2>
+          <p>
+            <strong>Correo: </strong>cvalerio99@hotmail.com<br>
+            <strong>Matricula: </strong>zS17016281<br>
+            <strong>Telefono: </strong>921-250-5799
+        </p>
+          <p><a target="_blank" class="btn btn-primary" href="https://www.facebook.com/carlos.daniel.3760" role="button"><i data-feather="facebook"></i>Seguir</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+  </main>
+  <hr class="featurette-divider">
+
+  <footer class="container">
+    <p>&copy; 2020 Universidad Veracruzana. &middot; Desarrollo de software &middot; Equipo: Wing´s Army</p>
+  </footer>
+</main>
+
 @endsection

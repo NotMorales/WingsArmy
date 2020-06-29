@@ -6,29 +6,18 @@
 
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-8">
             <h2>Fecha: {{$date}}</h2>
         </div>
-        <div class="col-md-8">
-            <div class="row">
-                <div class="col-md-8">
-                    <form action="{{Route('reporte.fecha')}}" method="POST" class="form-inline">
-                        @csrf
-                          <div class="form-group mx-sm-3 mb-2">
-                            <label name="date" >Fecha:  </label>
-                            <input name="date" type="date" class="form-control" value="{{$date}}">
-                          </div>
-                          <button type="submit" class="btn btn-primary mb-2">Ver Reporte</button>
-                    </form>
-                </div>
-                <div class="col-md-4">
-                    <a class="btn btn-danger" href="#" role="button">
-                        <i data-feather="save"></i>
-                        Guardar PDF
-                    </a>
-                </div>
-            </div>
-
+        <div class="col-md-4">
+            <form action="{{Route('reporte.fecha')}}" method="POST" class="form-inline">
+                @csrf
+                    <div class="form-group mx-sm-3 mb-2">
+                    <label name="date" >Fecha:  </label>
+                    <input name="date" type="date" class="form-control" value="{{$date}}">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Ver Reporte</button>
+            </form>
         </div>
     </div>
     @include('includes.sessions')

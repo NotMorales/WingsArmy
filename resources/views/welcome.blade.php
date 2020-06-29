@@ -57,7 +57,7 @@
   <hr class="featurette-divider">
 
   <footer class="container">
-    <p>&copy; 2020 Universidad Veracruzana. &middot; Desarrollo de software &middot; Equipo: Wing´s Army</p>
+    <p>&copy; 2020 Universidad Veracruzana. &middot; Desarrollo de aplicaciones &middot; Equipo: Wing´s Army</p>
   </footer>
 </main>
 
